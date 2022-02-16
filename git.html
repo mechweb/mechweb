@@ -4,11 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page title</title>
+    <title>git page</title>
     <link rel="stylesheet"type="text/css" media="screen" href="main.css">
     <script src="main.jss"></script>
 </head>
 <body>
+
+    <h1>Git cammands</h1>
+   <p><div><b>In the start we need give the username and email</b></div>
+    
+$  git config --global user.name mechweb
+   </p>
+<div><br>
+$ git config --global user.email mechsharad21@gmail.com
+
+</div><br>
+<div><div><b>to open VScode </b></div>
+$ code .    
+</div>
+
+<div><div><b>git init- is use at start to initialised empty git repository</b></div>
+$ git init
+Reinitialized existing Git repository in C:/Users/Advance/OneDrive/Desktop/Git in one vide/.git/
+
+</div>
+<div><b>ls -lart cammand give all the hidden folder and create .git folder which include all the files</b></div>
+
+<img src="/staging.png" alt="untracked,unmodified,modified,staged"width="900" height="400" >
+<div><b>UNTRACKED-- at start files are in this stage and git has nothing to do with this file. </b><br>
+<b>STAGING--  when we add the file it goes to staging and only those file we add which we want them to go to commit[commit- is a snapshot of file] .here we add file which goes to staging and then we commit them in git which let this file to go to unmodified stage.  </b><br>
+<b>UNMODIFIED--when file reach to this stage means files are saved in git. here if you want to remove the file then you can remove it. </b><br>
+<b>MODIFIED-- at unmodified stage,you can edit the file which lead it to modified stage and once it reach modified stage ,we have to stage the file and commit the file to save the changes made in file.   </b></div>
+
+<div><div><b>adding the file in git.</b></div>
+
+$ git add git.html
+
+</div>
+<div id="addfile">
+
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+      <b>here green color shows staging area</b>  new file:   git.html
+
+
+</div>
+<div>
+
+$ git commit
+[master (root-commit) 37f76ae] Initial commit
+ 1 file changed, 14 insertions(+)
+ create mode 100644 git.html
+
+</div>
+<div>
+Advance@
+$ git status
+On branch master
+nothing to commit, working tree clean
+</div>
+
+<div>
+Advance@
+$ touch about.html
+
+Advance@
+$ touch contact.html
+
+Advance@
+$ touch monuments.html
+</div>
+<div>
+Advance@
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        contact.html
+        monuments.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+</div>
+
     
 </body>
 </html>
