@@ -218,7 +218,7 @@ Changes not staged for commit:
             modified:   git.html
     
     no changes added to commit (use "git add" and/or "git commit -a")
-    <div><b>git diff cammand - it campare my working tree to staging area and if add about file using git add -A cammand in git[which lead it to staging area] then our working tree will became equal to staging area and it will show nothing in git terminal</b>$ git diff
+    <div><b>git diff cammand[in simple term it campare two file] - it campare my working tree to staging area and if add about file using git add -A cammand in git[which lead it to staging area] then our working tree will became equal to staging area and it will show nothing in git terminal</b>$ git diff
         diff --git a/about.html b/about.html
         index 12699e7..4e547e2 100644
         --- a/about.html
@@ -279,6 +279,95 @@ Changes not staged for commit:
     On branch master
     nothing to commit, working tree clean
     
+</div>
+<div><b>if we working on only few files let say 4 files and have no intention yo working on any file then if we want to commit all 4 file together - </b>
+    $ git commit -a -m "Skipped staging area and fixed <"
+    [master bc2346c] Skipped staging area and fixed <
+     1 file changed, 198 insertions(+), 11 deletions(-)
+    
+
+</div>
+<div><b>to check all the commit</b>
+    $ git log
+    commit bc2346c78b0b06d1ee408646cc6e23cf18c853d9 (HEAD -> master)
+    Author: mechweb <mechsharad21@gmail.com>
+    Date:   Thu Feb 17 12:45:13 2022 +0530
+    
+        Skipped staging area and fixed <
+    
+    commit ea29ef77bcea38ed8d10fb5bba6ec3dd9283b0be
+    Author: mechweb <mechsharad21@gmail.com>
+    Date:   Wed Feb 16 21:46:25 2022 +0530
+    
+        Added more html
+    
+    commit 37f76aea2590eca3f4916077eda09a459fcac78b
+    Author: mechweb <mechsharad21@gmail.com>
+    Date:   Wed Feb 16 12:20:33 2022 +0530
+    
+        Initial commit
+    
+    
+</div>
+<div><b>if we want to list all files using ls cammand</b>
+    $ ls
+    about.html  contact.html  git.html  monuments.html  staging.png
+    
+</div>
+<div><b>if someone add some random file and we want remove this file. but to understand that i have to add and commit this file first</b>
+    $ touch waste.html
+<div>
+    $ git add -A
+
+Advance@
+$ git commit -a -m "Adding waste"
+[master 7ccf325] Adding waste
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 waste.html
+
+</div>
+<div>
+    <b>git rm - it will delete file[permanently] from working directory as well as from staging area</b>
+    <b>git rm --cached cammand is use when we want the file to remove from staging area and go to untracked area</b>
+    $ git rm --cached waste.html
+rm 'waste.html'
+
+Advance@
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    waste.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        waste.html
+<div><b>before i use git rm i want to add this file</b>
+    $ git add -A
+<div>$ git status
+    On branch master
+    nothing to commit, working tree clean
+    </div>
+    <div>
+        $ git rm waste.html
+rm 'waste.html'
+    </div>
+    <div>
+        $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    waste.html
+    </div>
+    <div><b>it does'nt show waste.html file inlist of files</b>
+        $ ls
+about.html  contact.html  git.html  monuments.html  staging.png
+
+
+    </div>
+</div>
+
+</div>
 </div>
 </body>
 </html>
