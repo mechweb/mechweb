@@ -25,8 +25,8 @@ $ code .
 
 <div><div><b>git init- is use at start to initialised empty git repository</b></div>
 $ git init
-Reinitialized existing Git repository in C:/Users/Advance/OneDrive/Desktop/Git in one vide/.git/
-
+<p>Reinitialized existing Git repository in C:/Users/Advance/OneDrive/Desktop/Git in one vide/.git/
+</p> 
 </div>
 <div><b>ls -lart cammand give all the hidden folder and create .git folder which include all the files</b></div>
 
@@ -43,15 +43,15 @@ $ git add git.html
 </div>
 <div id="addfile">
 
-$ git status
-On branch master
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-      <b>here green color shows staging area</b>  new file:   git.html
-
+<div>$ git status </div>
+<div> On branch master
+</div>
+<div> No commits yet
+</div>
+<div> Changes to be committed:</div>
+  <div>(use "git rm --cached <file>..." to unstage)</div>
+     <div> <b>here green color shows staging area</b>  new file:   git.html
+</div>
 
 </div>
 <div>
@@ -91,7 +91,194 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 </div>
+<div><b>in vscode we made some changes in about.html. file</b><br><b>then we check status in git which shows about.html in modified . here about file is  modified and also in staging area which means in staging area it has its blank version which we create in the start  and changes we made is in modified</b>
+    $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html
+        modified:   git.html
+        new file:   monuments.html
+        new file:   staging.png
 
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+
+</div>
+<div><b>if i add all the file then this about file is also add in staging area again</b>
+    $ git add -A
+
+    Advance@
+    $ git status
+    On branch master
+    Changes to be committed:
+      (use "git restore --staged <file>..." to unstage)
+            new file:   about.html
+            new file:   contact.html
+            modified:   git.html
+            new file:   monuments.html
+            new file:   staging.png
     
+    
+</div>
+    <div><b>if we want to directly commit all the files in staging area and which are not commit yet</b>
+        $ git commit -m "Added more html"
+        [master ea29ef7] Added more html
+         5 files changed, 112 insertions(+), 1 deletion(-)
+         create mode 100644 about.html
+         create mode 100644 contact.html
+         create mode 100644 monuments.html
+         create mode 100644 staging.png
+        
+        Advance@
+        $ git status
+        On branch master
+        nothing to commit, working tree clean
+        
+    </div>
+    <div><b>clear cammand can be use to clear the terminal.</b></div>
+   <div><b>we made some changes in about.html but after that someone else has make changes or even remove the file and write anything then in this case how can we get our file back or recover it?</b>
+    $ git status
+    On branch master
+    Changes to be committed:
+      (use "git restore --staged <file>..." to unstage)
+            modified:   git.html
+            new file:   git.js
+    
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git restore <file>..." to discard changes in working directory)
+            modified:   about.html
+    
+    
+</div>
+<div><b>we recover the file by using checkout cammand.and it helps in matching the one file or all file with the last commit of our working directory </b>
+    $ git checkout about.html
+    Updated 1 path from the index
+<b>it will recover our about.html file</b>    
+</div>
+<div><b>if we want to recover all the file</b>
+    $ git checkout -f
+</div>
+<div><b>git log cammand :to see all the commit that we have made</b>
+    $ git log
+    commit ea29ef77bcea38ed8d10fb5bba6ec3dd9283b0be (HEAD -> master)
+    Author: mechweb <mechsharad21@gmail.com>
+    Date:   Wed Feb 16 21:46:25 2022 +0530
+    
+        Added more html
+    
+    commit 37f76aea2590eca3f4916077eda09a459fcac78b
+    Author: mechweb <mechsharad21@gmail.com>
+    Date:   Wed Feb 16 12:20:33 2022 +0530
+    
+        Initial commit
+    
+    </div>
+<div><b>if we want to print output of log and we want to see last 1 commit. git log -p -[number of commit we want to see]</b>
+    $ git log -p -1
+    commit ea29ef77bcea38ed8d10fb5bba6ec3dd9283b0be (HEAD -> master)
+    Author: mechweb <mechsharad21@gmail.com>
+    Date:   Wed Feb 16 21:46:25 2022 +0530
+    
+        Added more html
+    
+    diff --git a/about.html b/about.html
+    new file mode 100644
+    index 0000000..12699e7
+    --- /dev/null
+    +++ b/about.html
+    @@ -0,0 +1,14 @@
+    <!-- +<!DOCTYPE html>
+    +<html lang="en">
+    +<head>
+    +    <meta charset="UTF-8">
+    +    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    +    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    +    <title>contact</title>
+    +    <link rel="stylesheet"type="text/css" media="screen" href="main.css">
+    +    <script src="main.jss"></script>
+    +</head>
+    +<body>
+    +
+    +</body> -->
+    
+</div>
+<div><b>we made some changes in about file.</b>
+    $ git status
+    On branch master
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git restore <file>..." to discard changes in working directory)
+            modified:   about.html
+            modified:   git.html
+    
+    no changes added to commit (use "git add" and/or "git commit -a")
+    <div><b>git diff cammand - it campare my working tree to staging area and if add about file using git add -A cammand in git[which lead it to staging area] then our working tree will became equal to staging area and it will show nothing in git terminal</b>$ git diff
+        diff --git a/about.html b/about.html
+        index 12699e7..4e547e2 100644
+        --- a/about.html
+        +++ b/about.html
+        @@ -8,7 +8,7 @@
+             <link rel="stylesheet"type="text/css" media="screen" href="main.css">
+             <script src="main.jss"></script>
+         </head>
+        -<body> <!--staging area  -->
+        +<body>check diff <!--working directory  -->
+        
+         </body>
+         </html>
+        \ No newline at end of file
+        diff --git a/git.html b/git.html
+        index 1df7f3b..f8bc504 100644
+        --- a/git.html
+        +++ b/git.html
+        @@ -91,7 +91,125 @@ Untracked files:
+        
+         nothing added to commit but untracked files present (use "git add" to track)
+         </div>
+        +<div><b>in vscode we made some changes in about.html. file</b><br><b>then we check status in git which shows about.html in modified . here about file is  modified and also in staging area which means in staging area it has its blank version which we create in the start  and changes we made is in modified</b>
+        </div>
+</div>
+<div><b>if we want to campare staging area to last cammit</b>
+
+    $ git diff --staged
+    diff --git a/about.html b/about.html
+    index 12699e7..4e547e2 100644
+    --- a/about.html
+    +++ b/about.html
+    @@ -8,7 +8,7 @@
+         <link rel="stylesheet"type="text/css" media="screen" href="main.css">
+         <script src="main.jss"></script>
+     </head>
+    -<body><!--this is last commit  -->
+    +<body>check diff<!--this is our staging area  -->
+     </body>
+     </html>
+    \ No newline at end of file
+    diff --git a/git.html b/git.html
+    index 1df7f3b..dbfe640 100644
+    --- a/git.html
+    +++ b/git.html
+    @@ -25,8 +25,8 @@ $ code .
+    
+     <div><div><b>git init- is use at start to initialised empty git repository</b></div>
+     $ git init
+    -Reinitialized existing Git repository in C:/Users/Advance/OneDrive/Desktop/Git in one vide/.git/
+    -
+    </div>
+<div><b>now if you want to match  your working directory to last commit. this will rewrite working directory [which has <body>check diff in body] to last cammit[which has only <body> ] and now working directory has gone to previous stage [<body>] </b>
+    $ git checkout -f
+
+    Advance@
+    $ git status
+    On branch master
+    nothing to commit, working tree clean
+    
+</div>
 </body>
 </html>
