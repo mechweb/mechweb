@@ -523,8 +523,60 @@ Changes not staged for commit:
 </div>
 <div><b>if we want to ignore some directory or folder like in this case ignore folder .then add-</b></div>
 <div><b>ignore/ in .gitignore file . here this '/' means folder</b></div>
+<div><div><b>before adding ignore/ in .gitignore file .lets check status ,where we see this folder is shown in untracked files.</b></div>
+    $ git status
+    On branch master
+    Changes to be committed:
+      (use "git restore --staged <file>..." to unstage)
+            new file:   .gitignore
+            new file:   .vscode/settings.json
+            modified:   git.html
+    
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git restore <file>..." to discard changes in working directory)
+            modified:   .gitignore
+            modified:   git.html
+    
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+            ignore/
+    
+    
+</div>
+<div><b>after adding ignore/ in .gitignore file .lets check status ,where we see this folder is ignored.</b></div>
 <div>
+    $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .vscode/settings.json
+        modified:   git.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   git.html
+
 
 </div>
+<h3>lets talk about branchs</h3>
+<div><b>
+    branch is way to create branch [or copy] of our main file [or copy of master branch] where we can work and makes changes whithout worry of changes to be transfer to the master branch .
+</b></div>
+<div><b>here we create feature1 branch so that we can add some features in master branch after we check this features in our seprate branch </b></div>
+<div><div><b>we create feature1 branch</b></div>
+    $ git branch feature1
+ 
+</div>
+<div><div><b>to check branchs</b></div>
+    $ git branch
+  feature1
+* master
+<div><b>here '*' means feature1 is branch of master branch</b></div>
+</div>
+
 </body>
 </html>
