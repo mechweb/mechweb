@@ -11,23 +11,23 @@
 <body>
 
     <h1>Git cammands</h1>
-   <p><div><b>In the start we need give the username and email</b></div>
+   <p><div><b>In the start we need to give the username and email</b></div>
     
-$  git config --global user.name mechweb
+<div>$  git config --global user.name mechweb</div>
    </p>
 <div><br>
-$ git config --global user.email mechsharad21@gmail.com
+<div>$ git config --global user.email mechsharad21@gmail.com</div>
 
-</div><br>
+</div><hr>
 <div><div><b>to open VScode </b></div>
 $ code .    
-</div>
+</div><hr>
 
 <div><div><b>git init- is use at start to initialised empty git repository</b></div>
-$ git init
+<div>$ git init</div>
 <p>Reinitialized existing Git repository in C:/Users/Advance/OneDrive/Desktop/Git in one vide/.git/
 </p> 
-</div>
+</div><hr>
 <div><b>ls -lart cammand give all the hidden folder and create .git folder which include all the files</b></div>
 
 <img src="/staging.png" alt="untracked,unmodified,modified,staged"width="900" height="400" >
@@ -35,12 +35,12 @@ $ git init
 <b>STAGING--  when we add the file it goes to staging and only those file we add which we want them to go to commit[commit- is a snapshot of file] .here we add file which goes to staging and then we commit them in git which let this file to go to unmodified stage.  </b><br>
 <b>UNMODIFIED--when file reach to this stage means files are saved in git. here if you want to remove the file then you can remove it. </b><br>
 <b>MODIFIED-- at unmodified stage,you can edit the file which lead it to modified stage and once it reach modified stage ,we have to stage the file and commit the file to save the changes made in file.   </b></div>
-
+<hr>
 <div><div><b>adding the file in git.</b></div>
 
 $ git add git.html
 
-</div>
+</div><br>
 <div id="addfile">
 
 <div>$ git status </div>
@@ -53,7 +53,26 @@ $ git add git.html
      <div> <b>here green color shows staging area</b>  new file:   git.html
 </div>
 
-</div>
+</div><hr>
+<div><b>in every project to start the track of our project we have to make starting commit and that is our initial commit.</b>
+  <div>$ git commit <!-- here after commiting web editor will open where you can't write anything -->
+   </div><br> 
+ <div>
+ Initial commit <!-- this Initial commit that we type is message of my commit or you can say i give this message to the changes i made in this file. --> <br>
+ # Please enter the  commit messages for your changes. lines staring   
+ # with '#' will be ignored ,and as empty message aborts the commit.  
+ #   
+ #  On branch master 
+ #                <!-- here this is web editor and if you want to type something you need to press 'i' button  and to exit from this screen you have to press " :wq " -->
+ #  Initial commit 
+ #   
+ #  Changes to be committed:
+ #        new files:   index.html
+ #   
+
+
+ </div>
+
 <div>
 
 $ git commit
@@ -61,24 +80,27 @@ $ git commit
  1 file changed, 14 insertions(+)
  create mode 100644 git.html
 
+
+
 </div>
-<div>
+<div><b>working tree clean means there is no untracked files remain to commit ,all the files are commited. </b>
 Advance@
 $ git status
 On branch master
 nothing to commit, working tree clean
+
 </div>
-
-<div>
+</div><hr>
+<div><div><b>to create new empty file we use touch cammand.</b></div>
 Advance@
-$ touch about.html
-
-Advance@
-$ touch contact.html
+<div>$ touch about.html</div>
 
 Advance@
-$ touch monuments.html
-</div>
+<div>$ touch contact.html</div>
+
+Advance@
+<div>$ touch monuments.html</div>
+</div><br>
 <div>
 Advance@
 $ git status
@@ -90,7 +112,7 @@ Untracked files:
         monuments.html
 
 nothing added to commit but untracked files present (use "git add" to track)
-</div>
+</div><hr>
 <div><b>in vscode we made some changes in about.html. file</b><br><b>then we check status in git which shows about.html in modified . here about file is  modified and also in staging area which means in staging area it has its blank version which we create in the start  and changes we made is in modified</b>
     $ git status
 On branch master
@@ -108,9 +130,9 @@ Changes not staged for commit:
         modified:   about.html
 
 
-</div>
-<div><b>if i add all the file then this about file is also add in staging area again</b>
-    $ git add -A
+</div><hr>
+<div><b>if i add all the file then this about file is also add in staging area again. so to add all the files we use add -A cammand.</b>
+   <div> $ git add -A</div><br>
 
     Advance@
     $ git status
@@ -124,9 +146,9 @@ Changes not staged for commit:
             new file:   staging.png
     
     
-</div>
-    <div><b>if we want to directly commit all the files in staging area and which are not commit yet</b>
-        $ git commit -m "Added more html"
+</div><hr>
+    <div><b>if we want to directly commit all the files in staging area and which are not commit yet. for that we use commit -m "commit message" cammand.</b>
+        <div>$ git commit -m "Added more html"</div> <br>
         [master ea29ef7] Added more html
          5 files changed, 112 insertions(+), 1 deletion(-)
          create mode 100644 about.html
@@ -140,7 +162,7 @@ Changes not staged for commit:
         nothing to commit, working tree clean
         
     </div>
-    <div><b>clear cammand can be use to clear the terminal.</b></div>
+    <div><b>clear cammand -> can be use to clear the terminal.</b></div><hr>
    <div><b>we made some changes in about.html but after that someone else has make changes or even remove the file and write anything then in this case how can we get our file back or recover it?</b>
     $ git status
     On branch master
@@ -157,15 +179,15 @@ Changes not staged for commit:
     
 </div>
 <div><b>we recover the file by using checkout cammand.and it helps in matching the one file or all file with the last commit of our working directory </b>
-    $ git checkout about.html
+   <div> $ git checkout about.html</div><br>
     Updated 1 path from the index
 <b>it will recover our about.html file</b>    
-</div>
-<div><b>if we want to recover all the file</b>
-    $ git checkout -f
-</div>
+</div><hr>
+<div><b>if we want to recover all the file ,we use chechout -f cammand.</b>
+   <div>$ git checkout -f</div> 
+</div><hr>
 <div><b>git log cammand :to see all the commit that we have made</b>
-    $ git log
+    <div>$ git log</div><br>
     commit ea29ef77bcea38ed8d10fb5bba6ec3dd9283b0be (HEAD -> master)
     Author: mechweb <mechsharad21@gmail.com>
     Date:   Wed Feb 16 21:46:25 2022 +0530
@@ -178,9 +200,9 @@ Changes not staged for commit:
     
         Initial commit
     
-    </div>
-<div><b>if we want to print output of log and we want to see last 1 commit. git log -p -[number of commit we want to see]</b>
-    $ git log -p -1
+    </div><hr>
+<div><b>if we want to print output of log and we want to see last 1 commit.then we use  git log -p -[number of commit we want to see] cammand.</b>
+   <div> $ git log -p -1</div><br>
     commit ea29ef77bcea38ed8d10fb5bba6ec3dd9283b0be (HEAD -> master)
     Author: mechweb <mechsharad21@gmail.com>
     Date:   Wed Feb 16 21:46:25 2022 +0530
@@ -193,7 +215,7 @@ Changes not staged for commit:
     --- /dev/null
     +++ b/about.html
     @@ -0,0 +1,14 @@
-    <!-- +<!DOCTYPE html>
+    <code>+<!DOCTYPE html>
     +<html lang="en">
     +<head>
     +    <meta charset="UTF-8">
@@ -205,10 +227,10 @@ Changes not staged for commit:
     +</head>
     +<body>
     +
-    +</body> -->
-    
-</div>
-<div><b>we made some changes in about file.</b>
+    +</body>
+    </code>
+</div><hr>
+ <div><b>we made some changes in about file.</b> 
     $ git status
     On branch master
     Changes not staged for commit:
@@ -218,7 +240,8 @@ Changes not staged for commit:
             modified:   git.html
     
     no changes added to commit (use "git add" and/or "git commit -a")
-    <div><b>git diff cammand[in simple term it campare two file] - it campare my working tree to staging area and if add about file using git add -A cammand in git[which lead it to staging area] then our working tree will became equal to staging area and it will show nothing in git terminal</b>$ git diff
+    <div><b>git diff cammand[in simple term it campare two file] - it campare my working tree to staging area and if add about file using git add -A cammand in git[which lead it to staging area] then our working tree will became equal to staging area and it will show nothing in git terminal</b>
+        <div>$ git diff</div><br>
         diff --git a/about.html b/about.html
         index 12699e7..4e547e2 100644
         --- a/about.html
@@ -243,9 +266,11 @@ Changes not staged for commit:
          </div>
         +<div><b>in vscode we made some changes in about.html. file</b><br><b>then we check status in git which shows about.html in modified . here about file is  modified and also in staging area which means in staging area it has its blank version which we create in the start  and changes we made is in modified</b>
         </div>
-</div>
+</div><hr>
 <div><b>if we want to campare staging area to last cammit</b>
+   <div> $ git diff --staged</div><br>
 
+    Advance@
     $ git diff --staged
     diff --git a/about.html b/about.html
     index 12699e7..4e547e2 100644
@@ -266,29 +291,30 @@ Changes not staged for commit:
     +++ b/git.html
     @@ -25,8 +25,8 @@ $ code .
     
-     <div><div><b>git init- is use at start to initialised empty git repository</b></div>
-     $ git init
+     <div><hr>
+         <div><b>git init- is use at start to initialised empty git repository</b></div>
+    <div>$ git init</div> <br>
     -Reinitialized existing Git repository in C:/Users/Advance/OneDrive/Desktop/Git in one vide/.git/
     -
-    </div>
+    </div><hr>
 <div><b>now if you want to match  your working directory to last commit. this will rewrite working directory [which has <body>check diff in body] to last cammit[which has only <body> ] and now working directory has gone to previous stage [<body>] </b>
-    $ git checkout -f
+    <div>$ git checkout -f</div><br>
 
     Advance@
     $ git status
     On branch master
     nothing to commit, working tree clean
     
-</div>
+</div><hr>
 <div><b>if we working on only few files let say 4 files and have no intention yo working on any file then if we want to commit all 4 file together - </b>
-    $ git commit -a -m "Skipped staging area and fixed <"
+   <div>$ git commit -a -m "Skipped staging area and fixed <"</div> <br>
     [master bc2346c] Skipped staging area and fixed <
      1 file changed, 198 insertions(+), 11 deletions(-)
     
 
-</div>
+</div><br>
 <div><b>to check all the commit</b>
-    $ git log
+   <div>$ git log</div> <br>
     commit bc2346c78b0b06d1ee408646cc6e23cf18c853d9 (HEAD -> master)
     Author: mechweb <mechsharad21@gmail.com>
     Date:   Thu Feb 17 12:45:13 2022 +0530
@@ -308,16 +334,16 @@ Changes not staged for commit:
         Initial commit
     
     
-</div>
+</div><hr>
 <div><b>if we want to list all files using ls cammand</b>
-    $ ls
+  <div>$ ls</div>  
     about.html  contact.html  git.html  monuments.html  staging.png
     
-</div>
-<div><b>if someone add some random file and we want remove this file. but to understand that i have to add and commit this file first</b>
+</div><hr> -->
+<div><b>if someone add some random file and we want remove this file. but to understand that i have to add and commit this file first .then : there are two ways to remove file 1>rm cammand ,2>rm --cached cammand</b><div>
     $ touch waste.html
 <div>
-    $ git add -A
+  <div>$ git add -A</div>  
 
 Advance@
 $ git commit -a -m "Adding waste"
@@ -325,11 +351,12 @@ $ git commit -a -m "Adding waste"
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 waste.html
 
-</div>
+</div> </div>
+<hr>
 <div>
     <b>git rm - it will delete file[permanently] from working directory as well as from staging area</b>
     <b>git rm --cached cammand is use when we want the file to remove from staging area and go to untracked area</b>
-    $ git rm --cached waste.html
+   <div>$ git rm --cached waste.html</div> <br>
 rm 'waste.html'
 
 Advance@
@@ -362,12 +389,142 @@ Changes to be committed:
     <div><b>it does'nt show waste.html file inlist of files</b>
         $ ls
 about.html  contact.html  git.html  monuments.html  staging.png
+</div>
+<div>
+   <div>$ git commit -a -m "removing waste"</div> 
+[master 668ee11] removing waste
+ 2 files changed, 90 insertions(+), 1 deletion(-)
+ delete mode 100644 waste.html
+</div>
+</div><hr>
+<div><b>if we want to see short status to check what happening in git repository then use git status -s</b>
+  <div>$ git status -s</div>  
+    M about.html
+    M git.html
+    M monuments.html
+<div><b>if we add about file to staging area</b>
+    $ git add about.html
+</div>   <div>
+   <div>$ git status -s</div> 
+M <b>this M is in first box and in green color</b>  about.html <!-- here are two box first with green box shows file in staging area and second in red color denotes file in working tree  -->
+ M <b>this M is in second box in red color</b> git.html<!-- here M denotes file is modified -->
+ M monuments.html
+
+</div>
+<div><b>if i make some changes in about file and not adding it to staging area then -</b>
+    $ git status -s
+    MM about.html <b>here M is show on both the boxs one in staging and one working tree</b>
+     M git.html
+     M monuments.html
+    
+</div>
+</div><hr>
+<div><b>if you want to ignore some file -</b>
+  <div>$ touch .gitignore</div>  
+<b>this gitignore file is the file which we dont want to track . there will be some file like log file which we dont want to track because it has nothing to do with our project. so we will add all the data or files in this file which is irrelevent to our project like some images which are randomly producing etc.  </b>
+</div>
+<div>
+    <b>creating another mylogs.log file </b><div><b>inside this file-</b> </div>
+    processing......
+downloading......
+uploading.......
+<div><b> these files are having logs because size of files are very long ang we dont want to push it to server so we want it to be ignore and for that we have to add these file in .gitignore file. as shown as we add these mylogs.log file ,it will be ignore does't matter in which folder it is present</b></div>
+
+</div>
+<div>
+    $ touch mylogs.log
+    
+    Advance@LAPTOP
+    $ git status
+    On branch master
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git restore <file>..." to discard changes in working directory)
+            modified:   git.html
+    
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+            .gitignore
+            .vscode/
+    
+    no changes added to commit (use "git add" and/or "git commit -a")
+    
+    Advance@LAPTOP-0UIRQONU MINGW64 ~/OneDrive/Desktop/Git in one video (master)
+    $ git add -A
+    
+    Advance@LAPTOP-0UIRQONU MINGW64 ~/OneDrive/Desktop/Git in one video (master)
+    $ git status
+    On branch master
+    Changes to be committed:
+      (use "git restore --staged <file>..." to unstage)
+            new file:   .gitignore
+            new file:   .vscode/settings.json
+            modified:   git.html
+    
+    </div>
+    <div><b>here you can see after adding all files,mylogs.log file is still not shown in added file means it is ignored. </b></div>
+    <hr><div><b>if we want mylog.log file to be ignore only from root file then in that case we use or add -</b></div><div><b>/mylogs.log in .gitignore file here '/' means only ignore log file which is in same folder which include .gitignore </b></div><div><b>and then if use git status we can see other log file is not ignore by git.</b></div>
+    <div>
+        $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .vscode/settings.json
+        modified:   git.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        logs/
 
 
     </div>
+    <div><b>if we add all the the files then other log files will also be added</b></div>
+    <div>
+        $ git add -A
+
+    </div>
+    <div>
+        $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .vscode/settings.json
+        modified:   git.html
+        new file:   logs/mylogs.log <!--here log file is also added.  -->
 </div>
+<div><b>if we want to ignore all the file whose extension is .log then use-</b></div>
+<div><b>*.log  in .gitignore file.</b></div>
+<div><b>but before that we have to untracked all the log files. and then add *.log  in .gitignore file.</b></div>
+<div>
+    $ git rm --cached logs/mylogs.log
+rm 'logs/mylogs.log'
 
 </div>
+<div>
+    $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .vscode/settings.json
+        modified:   git.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+</div>
+<div><b>if we want to ignore some directory or folder like in this case ignore folder .then add-</b></div>
+<div><b>ignore/ in .gitignore file . here this '/' means folder</b></div>
+<div>
+
 </div>
 </body>
 </html>
